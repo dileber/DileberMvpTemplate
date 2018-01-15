@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<template
+    format="2"
+    revision="2"
+    name="Dileber MVP Data"
+    minApi="7"
+    minBuildApi="14"
+    description="Creates a new Dileber MVP Data">
+
+    <category value="DileberMVP" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="nameTemple"
+        name="Name temple"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Main"
+        help="The name of the nameTemple" />
+
+
+    <parameter
+        id="remoteDataSourceClass"
+        name="remoteDataSource Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MainRemoteDataSource"
+        suggest="${underscoreToCamelCase(classToResource(nameTemple))}RemoteDataSource"
+        help="The name of the remoteDataSource class to create" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+    <parameter
+        id="serviceClass"
+        name="service Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainService"
+        suggest="${underscoreToCamelCase(classToResource(nameTemple))}Service"
+        help="The name of the service to create" />
+
+
+
+    <parameter
+        id="localDataSourceClass"
+        name="localDataSource Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainLocalDataSource"
+        suggest="${underscoreToCamelCase(classToResource(nameTemple))}LocalDataSource"
+        help="The name of the localDataSource to create" />
+
+    <parameter
+        id="repositoryClass"
+        name="repositoryDataSource Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainRepositoryDataSource"
+        suggest="${underscoreToCamelCase(classToResource(nameTemple))}Repository"
+        help="The name of the repositoryDataSource to create" />
+
+   <parameter
+        id="dataSourceClass"
+        name="dataSource Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="MainDataSource"
+        suggest="${underscoreToCamelCase(classToResource(nameTemple))}DataSource"
+        help="The name of the dataSource to create" />
+
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>  
