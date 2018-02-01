@@ -8,9 +8,9 @@ import com.drcosu.ndileber.mvp.presenter.DileberPresenter;
  * Created by dileber
  */
 
-public class ${presenterClass} extends NormalPresenter<${contractClass}.View,${dataClass}> implements ${contractClass}.Presenter {
+public class ${presenterClass} extends NormalPresenter<${contractClass}.View,dataClass> implements ${contractClass}.Presenter {
 
-    public ${presenterClass}(@NonNull ${contractClass}.View view, @NonNull ${dataClass} mDataSource) {
+    public ${presenterClass}(@NonNull ${contractClass}.View view, @NonNull dataClass mDataSource) {
 		super(view, mDataSource);
     }
 
